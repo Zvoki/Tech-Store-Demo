@@ -1,0 +1,274 @@
+.product-detail-page {
+  min-height: 100vh;
+  background: #0f1115;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   MAIN PRODUCT SECTION
+========================= */
+
+.product-main {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: #161a22;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.product-main img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #0f1115;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.product-info h1 {
+  background: linear-gradient(90deg, #4da3ff, #9b5cff);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.product-info p {
+  color: #9aa4b2;
+  line-height: 1.5;
+}
+
+.product-meta {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: #cbd5e1;
+}
+
+/* =========================
+   ADD TO CART BUTTON
+========================= */
+
+.btn-add-main {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #4da3ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.btn-add-main:hover {
+  background: #2f8df7;
+  transform: translateY(-2px);
+}
+
+.btn-add-main:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   SIMILAR PRODUCTS
+========================= */
+
+.similar-section {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 3rem;
+}
+
+.similar-section h2 {
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.similar-card {
+  background: #161a22;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.similar-card:hover {
+  transform: translateY(-5px);
+}
+
+.similar-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.similar-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.similar-sku {
+  font-size: 0.75rem;
+  color: #9aa4b2;
+  margin-bottom: 0.5rem;
+}
+
+/* BUTTON */
+.btn-add-small {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #4da3ff;
+  color: #4da3ff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-add-small:hover {
+  background: #4da3ff;
+  color: white;
+}
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.product-loading,
+.product-error {
+  color: #9aa4b2;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .product-main {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   📱 ULTRA SMALL SCREENS
+   (250px – 400px)
+========================= */
+@media (max-width: 400px) {
+
+  /* TÍTULO PRINCIPAL (H1) */
+  .product-info h1 {
+    font-size: 1.4rem;     /* antes enorme */
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* SUBTÍTULOS (H2) */
+  .similar-section h2,
+  .product-main h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* BOTÓN PRINCIPAL */
+  .btn-add-main {
+    width: 70%;
+    margin: 1rem auto 0 auto;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  /* IMAGEN PRINCIPAL MÁS COMPACTA */
+  .product-main img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* LAYOUT MÁS COMPACTO */
+  .product-main {
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .product-info p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+/* =========================
+   📱 ULTRA SMALL SCREENS
+   (250px – 400px)
+========================= */
+@media (max-width: 400px) {
+
+  /* TÍTULO PRINCIPAL (EL QUE VES GIGANTE) */
+  .search-title {
+    font-size: 1.3rem;     /* antes ~1.6–2rem */
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  /* TÍTULO DEL PRODUCTO PRINCIPAL */
+  .product-info h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* BOTÓN PRINCIPAL */
+  .btn-add-main {
+    width: 70%;
+    margin: 1rem auto 0 auto;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+
+/* =========================
+   📱 SUPER SMALL (250–320px)
+========================= */
+@media (max-width: 320px) {
+
+  .search-title {
+    font-size: 1.15rem !important;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+    align-items: center;
+  }
+
+  .btn-add-main {
+    width: 80%;
+    font-size: 0.85rem;
+  }
+}

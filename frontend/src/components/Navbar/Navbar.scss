@@ -1,0 +1,350 @@
+.searcher {
+  flex-shrink: 0;
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  background: rgba(15, 17, 21, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.navbar-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #4da3ff, #9b5cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   CENTER NAV LINKS (DESKTOP)
+========================= */
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  min-width: 0;
+}
+
+.navbar-center a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+
+  position: relative;
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.navbar-center a:hover {
+  color: #fff;
+}
+
+.navbar-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4da3ff, #9b5cff);
+  transition: 0.3s;
+}
+
+.navbar-center a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT AREA
+========================= */
+
+.navbar-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8rem;
+   min-width: auto;
+  flex-shrink: 1;
+}
+
+/* =========================
+   SEARCHER
+========================= */
+
+.searcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: 0.2s ease;
+}
+
+.searcher input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.85rem;
+  width: 140px;
+  min-width: 0;
+  transition: width 0.25s ease;
+}
+
+.searcher input:focus {
+  width: 180px;
+}
+
+.searcher button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  padding: 4px 6px;
+  border-radius: 8px;
+
+  transition: 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.searcher button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.searcher:hover {
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+/* =========================
+   HAMBURGER (DESKTOP HIDDEN)
+========================= */
+
+.hamburger {
+  display: none;
+
+  font-size: 24px;
+  padding: 6px 8px;
+
+  background: none;
+  border: none;
+
+  color: white;
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  transition: 0.2s ease;
+}
+
+.hamburger:hover {
+  color: #4da3ff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 998;
+}
+
+/* =========================
+   SIDE MENU (MOBILE DRAWER)
+========================= */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+
+  width: 70%;
+  max-width: 280px;
+  height: 100%;
+
+  background: #111;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+// =========================
+// CART & CLOSE BUTTONS
+
+.close-btn {
+  align-self: flex-end;
+
+  font-size: 20px;
+  background: none;
+  border: none;
+
+  color: white;
+  cursor: pointer;
+}
+
+.cart-btn {
+  position: relative;
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: 0.2s ease;
+
+  &:hover {
+    color: #4da3ff;
+    transform: translateY(-2px);
+  }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  /* hide desktop nav */
+  .navbar-center {
+    display: none;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-right {
+    gap: 0.5rem;
+    min-width: auto;
+  }
+
+  /* keep search visible but compact */
+  .searcher {
+    padding: 0.25rem 0.4rem;
+    max-width: 180px;
+  }
+
+  .searcher input {
+    width: 90px;
+    font-size: 0.75rem;
+  }
+
+  .searcher input:focus {
+    width: 120px;
+  }
+
+  .searcher button {
+    padding: 3px 5px;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 400px) {
+  .searcher {
+    max-width: 140px;
+    padding: 0.25rem 0.35rem;
+    gap: 0.25rem;
+  }
+
+  .searcher input {
+    width: 70px;
+    font-size: 0.7rem;
+  }
+
+  .searcher input:focus {
+    width: 90px;
+  }
+
+  .searcher button {
+    font-size: 0.75rem;
+    padding: 2px 4px;
+  }
+}
+
+/* =========================
+   📱 FIX: Drawer opaco en pantallas pequeñas
+========================= */
+@media (max-width: 400px) {
+
+  .side-menu {
+    background: #464a53 !important; 
+    opacity: 1 !important;           
+    z-index: 9999 !important;   
+    width: 60% !important;     
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.9) !important; 
+  }
+}
+

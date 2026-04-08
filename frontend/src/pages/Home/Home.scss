@@ -1,0 +1,279 @@
+.home-container {
+  min-height: 100vh;
+  background: #0f1115;
+  color: #fff;
+  padding: 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= HERO ================= */
+
+.home-welcome {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.home-welcome h1 {
+  font-size: 2.5rem;
+
+  background: linear-gradient(90deg, #4da3ff, #9b5cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-welcome p {
+  color: #9aa4b2;
+  margin-top: 0.5rem;
+}
+
+/* ================= FEATURES (TOP 4) ================= */
+
+.home-features {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+
+  margin: 2rem 0;
+}
+
+.feature-card {
+  text-decoration: none;
+  color: inherit;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  padding: 1.3rem;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.feature-card p {
+  color: #9aa4b2;
+  font-size: 0.9rem;
+}
+
+/* hover effect (consistent with bottom cards) */
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(77, 163, 255, 0.35);
+  background: rgba(77, 163, 255, 0.05);
+}
+
+/* ================= BANNER ================= */
+
+.home-banner {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem 0;
+}
+
+.banner-link img {
+  width: 100%;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.banner-link img:hover {
+  transform: scale(1.02);
+}
+
+/* ================= CAROUSEL ================= */
+
+.tek-carousel {
+  width: 100%;
+  max-width: 1200px;
+
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.tek-carousel h4 {
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+/* viewport (important for structure) */
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  padding: 1rem 0;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* track animation */
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+
+  width: max-content;
+
+  animation: scroll 25s linear infinite;
+}
+
+/* 🔥 BIG CARDS (KEY FIX) */
+.carousel-slide {
+  width: 420px;
+  height: 280px;
+
+  flex-shrink: 0;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: #1a1f2a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-slide:hover {
+  transform: scale(1.06);
+}
+
+/* animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= BOTTOM CARDS (4 GRID) ================= */
+
+.home-bottom {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+
+  margin-top: 3rem;
+}
+
+.bottom-card {
+  text-decoration: none;
+  color: #cbd5e1;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  padding: 1.3rem;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.bottom-card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.bottom-card p {
+  font-size: 0.9rem;
+  color: #9aa4b2;
+}
+
+/* hover same style as top cards */
+.bottom-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(77, 163, 255, 0.35);
+  background: rgba(77, 163, 255, 0.05);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .home-welcome h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-slide {
+    width: 260px;
+    height: 170px;
+  }
+
+  .carousel-track {
+    animation: scroll 18s linear infinite;
+  }
+}
+/* =========================
+   📱 ULTRA SMALL SCREENS
+   (250px – 400px)
+========================= */
+@media (max-width: 400px) {
+  .home-welcome h1 {
+    font-size: 1.6rem;   /* antes 2.5rem → demasiado grande */
+    line-height: 1.2;
+  }
+
+  .home-welcome p {
+    font-size: 0.9rem;
+  }
+
+  .home-welcome {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .home-features {
+    gap: 0.8rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .home-bottom {
+    gap: 0.8rem;
+  }
+}
+
+/* =========================
+   📱 SUPER SMALL (250–320px)
+========================= */
+@media (max-width: 320px) {
+  .home-welcome h1 {
+    font-size: 1.3rem;   /* aún más pequeño */
+  }
+
+  .home-welcome p {
+    font-size: 0.8rem;
+  }
+
+  .carousel-slide {
+    width: 200px;
+    height: 130px;
+  }
+}

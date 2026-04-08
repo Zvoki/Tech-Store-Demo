@@ -1,0 +1,226 @@
+/* src/components/Messages/Messages.scss */
+
+.ts-message {
+  padding: 12px 18px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: tsFadeIn 0.25s ease-out;
+  display: inline-block;
+}
+
+.ts-message-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Animación */
+@keyframes tsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respeta tus clases actuales */
+.products-loading,
+.product-loading,
+.product-error {
+  @extend .ts-message;
+}
+
+.ts-inline-message {
+  margin-top: 10px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(77, 163, 255, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  animation: tsFadeIn 0.25s ease-out;
+}
+
+.ts-message-center {
+  position: fixed;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+  z-index: 99999;
+
+  /* Tamaño */
+  width: min(420px, 92vw);
+  padding: 24px 26px;
+
+  /* Forma más moderna (menos redondeo exagerado) */
+  border-radius: 14px;
+
+  /* Fondo premium (menos plano, más profundidad) */
+  background: linear-gradient(
+    145deg,
+    rgba(28, 28, 28, 0.92),
+    rgba(18, 18, 18, 0.88)
+  );
+
+  /* Borde más elegante */
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  /* Glass suave (sin exagerar blur) */
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+  /* Sombra más “premium UI” */
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  /* Texto */
+  color: #ffffff;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+
+  /* Animación más limpia */
+  animation: tsMessagePop 0.28s ease-out;
+}
+
+/* Animación premium */
+@keyframes tsMessagePop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.92);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Tablets */
+@media (max-width: 600px) {
+  .ts-message-center {
+    padding: 20px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .ts-message-center {
+    padding: 18px 16px;
+    font-size: 0.98rem;
+    border-radius: 10px;
+  }
+}
+
+/* Ultra pequeños (250px reales) */
+@media (max-width: 280px) {
+  .ts-message-center {
+    width: 94vw;
+    padding: 14px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+}
+
+
+/* ============================================
+   CHECKOUT SUCCESS — MODAL PREMIUM
+   ============================================ */
+
+.ts-checkout-success {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 999999;
+
+  width: min(480px, 92vw);
+  padding: 32px 36px;
+
+  border-radius: 20px;
+
+  /* Fondo premium con profundidad */
+  background: linear-gradient(
+    145deg,
+    rgba(25, 25, 30, 0.95),
+    rgba(15, 15, 20, 0.92)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  /* Sombra elegante */
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+
+  animation: checkoutPop 0.35s ease-out;
+
+  /* Para que NO herede estilos del toast */
+  .ts-message-text {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: none !important;
+
+    font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  /* Mensaje adicional */
+  .checkout-extra {
+    margin-top: 14px;
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+    color: #b8c7ff;
+    opacity: 0.9;
+  }
+}
+
+/* Animación modal */
+@keyframes checkoutPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.88);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 360px) {
+  .ts-checkout-success {
+    padding: 24px 22px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 280px) {
+  .ts-checkout-success {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+}
