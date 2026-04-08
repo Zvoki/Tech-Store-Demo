@@ -1,0 +1,56 @@
+# ============================
+# FRONTEND (Vite + pnpm)
+# ============================
+
+node_modules/
+dist/
+.vite/
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+*.cache
+
+# Env files (frontend)
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# ============================
+# BACKEND (.NET WebApi + PostgreSQL)
+# ============================
+
+# Build artifacts
+bin/
+obj/
+
+# User-specific files (VS)
+*.user
+*.suo
+
+# Publish output
+publish/
+
+# ASP.NET generated files
+*.pid
+
+# Env files (backend)
+appsettings.Development.json
+appsettings.Local.json
