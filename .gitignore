@@ -54,3 +54,18 @@ publish/
 # Env files (backend)
 appsettings.Development.json
 appsettings.Local.json
+
+# ============================
+# VISUAL STUDIO (auto-generated)
+# ============================
+
+.vs/
+*.db
+*.dtbcache
+*.ide
+*.metadata
+*.projects
+*.strings
+*.cache
+*.sqlite
+*.userprefs
