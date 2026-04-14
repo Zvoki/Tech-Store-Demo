@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Products.scss";
 import Messages from "../../components/Messages/Messages";
-
+// Function Products: Category + List of products.
 function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
