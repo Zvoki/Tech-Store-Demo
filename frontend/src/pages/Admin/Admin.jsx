@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Admin.scss";
-
+//Function Admin: Login + Panel Admin.
 function Admin() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [username, setUsername] = useState("");
