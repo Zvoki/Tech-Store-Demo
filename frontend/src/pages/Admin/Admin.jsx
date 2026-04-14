@@ -47,7 +47,7 @@ function Admin() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-
+//password input section.
           <input
             type="password"
             placeholder="Password"
