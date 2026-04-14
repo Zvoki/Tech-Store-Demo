@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-
+//Hero section.
       {/* HERO Section */}
 
       <section className="home-welcome">
