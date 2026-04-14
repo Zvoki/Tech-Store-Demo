@@ -13,7 +13,7 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+// FETCH PRODUCT ON MOUNT
   useEffect(() => {
     fetch(`http://localhost:5239/api/product/${id}`)
       .then((res) => res.json())
