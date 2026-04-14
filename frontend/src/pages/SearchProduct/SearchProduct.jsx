@@ -47,7 +47,7 @@ function SearchProduct() {
     fetchData();
   }, [query]);
 
-  // 🧠 PRO CART HANDLER (igual que ProductDetail)
+  // 🧠 PRO CART HANDLER 
   const handleAddToCart = (product) => {
     if (!product) return;
 
