@@ -19,7 +19,8 @@ export default function Home() {
   return (
     <div className="home-container">
 
-      {/* HERO */}
+      {/* HERO Section */}
+
       <section className="home-welcome">
         <h1>Welcome to Tek✨Store</h1>
         <p>Premium gaming laptops and next-gen smartphones built for performance.</p>
