@@ -9,7 +9,7 @@ function Products() {
   const [viewMode, setViewMode] = useState("category");
   const [selectedType, setSelectedType] = useState(null);
 
-  // FETCH PRODUCTS
+  // FETCH PRODUCTS ON MOUNT
   useEffect(() => {
     fetch("http://localhost:5239/api/product")
       .then((res) => res.json())
