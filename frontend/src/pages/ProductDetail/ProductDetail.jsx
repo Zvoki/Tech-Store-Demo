@@ -77,7 +77,7 @@ function ProductDetail() {
         </div>
       </div>
 
-      {/* SIMILAR PRODUCTS */}
+      {/* SIMILAR PRODUCTS   x 6*/}
       <div className="similar-section">
         <h2>Similar products</h2>
 
