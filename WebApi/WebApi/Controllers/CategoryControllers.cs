@@ -154,6 +154,8 @@ namespace WebApi.Controllers
 
             if (product.CategoryId != categoryId)
                 return BadRequest("Product does not apply to this category.");
+                _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
 
 
             return NoContent();
