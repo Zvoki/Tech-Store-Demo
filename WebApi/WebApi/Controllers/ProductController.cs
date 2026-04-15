@@ -63,7 +63,8 @@ namespace WebApi.Controllers
         }
 
 
-        // GET api/product/5
+        // GET api/product/ID
+        
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
