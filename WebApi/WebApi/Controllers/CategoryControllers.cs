@@ -18,7 +18,7 @@ namespace WebApi.Controllers
         }
 
         // GET /api/categories
-        // GET /api/categories?slug=Smartphones
+        // GET /api/categories?slug=phone
         
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] string? slug)
