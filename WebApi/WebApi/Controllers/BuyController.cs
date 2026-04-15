@@ -39,7 +39,7 @@ namespace WebApi.Controllers
             _context.Clients.Add(client);
             _context.SaveChanges();
 
-            // Generar ClientNumber tipo C0001
+            // Generate ClientNumber with initial 'C'
             client.ClientNumber = $"C{client.Id:D4}";
             _context.SaveChanges();
 
