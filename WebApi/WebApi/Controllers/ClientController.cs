@@ -77,6 +77,7 @@ namespace WebApi.Controllers
         public IActionResult Put(int id, ClientModel model)
         {
             var client = _context.Clients.Find(id);
+            
             if (client == null)
                 return NotFound();
             client.ClientNumber = model.ClientNumber;
