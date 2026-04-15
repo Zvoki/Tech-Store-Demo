@@ -153,7 +153,7 @@ namespace WebApi.Controllers
                 return NotFound("Product not found");
 
             if (product.CategoryId != categoryId)
-                return BadRequest("Product does not belong to this category.");
+                return BadRequest("Product does not apply to this category.");
 
             product.CategoryId = null;
 
