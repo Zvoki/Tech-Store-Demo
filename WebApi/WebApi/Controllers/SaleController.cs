@@ -24,7 +24,6 @@ namespace WebApi.Controllers
                 .Include(s => s.Client)
                 .Include(s => s.Items)
                 .ToListAsync();
-
             return Ok(sales);
         }
 
