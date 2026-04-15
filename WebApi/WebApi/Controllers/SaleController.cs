@@ -61,7 +61,7 @@ namespace WebApi.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Sale and items deleted successfully" });
+            return Ok(new { message = "Sale and items deleted successfully ☻" });
         }
     }
 }
