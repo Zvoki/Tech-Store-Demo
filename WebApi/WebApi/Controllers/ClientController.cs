@@ -52,7 +52,7 @@ namespace WebApi.Controllers
                 CreatedAt = DateTime.UtcNow
             };
 
-            // Generar ClientNumber automáticamente (versión robusta y compatible con EF)
+            // Generate ClientNumber starting with C0001
             var lastNumber = _context.Clients
                 .Where(c => c.ClientNumber != null && c.ClientNumber.Length > 1)
                 .AsEnumerable() // a partir de aquí es LINQ en memoria
