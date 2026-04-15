@@ -150,7 +150,7 @@ namespace WebApi.Controllers
             var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
 
             if (product == null)
-                return NotFound();
+                return NotFound("Product not found");
 
             if (product.CategoryId != categoryId)
                 return BadRequest("Product does not belong to this category.");
