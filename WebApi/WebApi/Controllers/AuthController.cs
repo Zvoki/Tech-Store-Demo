@@ -21,7 +21,7 @@ namespace WebApi.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
-            // Validación hardcodeada
+            // Set admin & password hardcoded for simplicity. 
             if (request.Username != "admin" || request.Password != "REMOVED_SECRET")
             {
                 return Unauthorized(new { error = "Invalid username or password." });
