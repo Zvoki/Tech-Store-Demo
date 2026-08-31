@@ -47,12 +47,12 @@ In active development as a portfolio project focused on practical application of
 ## Setup
 ### Frontend
 ```bash
-cd frontend
+cd mood/frontend
 pnpm install
 pnpm dev
 #### Backend
 ```bash
-cd backend
+cd mood/WebApi/WebApi
 dotnet restore
 dotnet run
 Update PostgreSQL configuration in:
