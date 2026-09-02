@@ -4,6 +4,7 @@ import { useState } from "react";
 import confetti from "canvas-confetti";
 import "./Checkout.scss";
 import Messages from "../../components/Messages/Messages";
+import { API_URL } from "../../config";
 
 export default function Checkout() {
   const { cartItems, updateQuantity, removeFromCart, cartTotal, clearCart } = useCart();
@@ -46,7 +47,7 @@ export default function Checkout() {
     };
 
     try {
-      const res = await fetch("http://localhost:5239/api/buy", {
+      const res = await fetch(`${API_URL}/buy`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

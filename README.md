@@ -49,11 +49,28 @@ In active development as a portfolio project focused on practical application of
 ```bash
 cd mood/frontend
 pnpm install
+copy .env.example .env.local
 pnpm dev
-#### Backend
+```
+
+Set `VITE_API_URL` in `.env.local` when the API does not use the default local URL.
+
+### Backend
 ```bash
 cd mood/WebApi/WebApi
 dotnet restore
+copy appsettings.example.json appsettings.Local.json
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:Ef_Postgres_Db" "Host=localhost;Database=tech_store;Username=postgres;Password=your-local-password"
+dotnet user-secrets set "Jwt:Key" "your-local-secret-at-least-32-characters"
+dotnet user-secrets set "Admin:Username" "admin"
+dotnet user-secrets set "Admin:Password" "your-local-admin-password"
 dotnet run
-Update PostgreSQL configuration in:
-WebApi/WebApi/appsettings.Development.json
+```
+
+`appsettings.Local.json`, `.env.local` and database credentials are intentionally excluded from version control. Use PostgreSQL locally and apply the EF Core migrations before using checkout or the admin panel.
+
+## Public repository notes
+- The database seed contains fictional catalog data only.
+- Authentication credentials and JWT signing keys must be supplied through User Secrets or environment variables.
+- Never commit production connection strings, access tokens, customer records, or exported database files.

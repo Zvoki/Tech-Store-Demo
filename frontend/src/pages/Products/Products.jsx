@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Products.scss";
+import { API_URL } from "../../config";
 import Messages from "../../components/Messages/Messages";
 // Function Products: Category + List of products.
 function Products() {
@@ -11,7 +12,7 @@ function Products() {
 
   // FETCH PRODUCTS ON MOUNT
   useEffect(() => {
-    fetch("http://localhost:5239/api/product")
+    fetch(`${API_URL}/product`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

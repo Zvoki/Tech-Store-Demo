@@ -34,7 +34,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>© 2026 TekStore. All rights reserved.</p>
-        <p>Designed by KodinGaston - REMOVED_CONTACT</p>
+        <p>Portfolio demonstration project</p>
       </div>
     </footer>
   );

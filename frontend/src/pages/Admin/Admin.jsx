@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Admin.scss";
+import { API_URL } from "../../config";
 //Function Admin: Login + Panel Admin.
 function Admin() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
@@ -10,7 +11,7 @@ function Admin() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5239/api/auth/login", {
+      const res = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),

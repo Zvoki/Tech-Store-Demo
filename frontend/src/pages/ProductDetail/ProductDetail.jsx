@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import "./ProductDetail.scss";
+import { API_URL } from "../../config";
 import Messages from "../../components/Messages/Messages";
 
 function ProductDetail() {
@@ -15,7 +16,7 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true);
 // FETCH PRODUCT ON MOUNT
   useEffect(() => {
-    fetch(`http://localhost:5239/api/product/${id}`)
+    fetch(`${API_URL}/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -27,7 +28,7 @@ function ProductDetail() {
   useEffect(() => {
     if (!product) return;
 
-    fetch(`http://localhost:5239/api/product/search?q=${product.sku}`)
+    fetch(`${API_URL}/product/search?q=${product.sku}`)
       .then((res) => res.json())
       .then((data) => {
         setSimilarProducts(data.similarProducts || []);

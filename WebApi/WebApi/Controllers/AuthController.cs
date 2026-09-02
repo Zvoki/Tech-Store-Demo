@@ -21,8 +21,14 @@ namespace WebApi.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
-            // Set admin & password hardcoded for simplicity. 
-            if (request.Username != "admin" || request.Password != "REMOVED_SECRET")
+            var adminSettings = _config.GetSection("Admin");
+            var configuredUsername = adminSettings["Username"];
+            var configuredPassword = adminSettings["Password"];
+
+            if (string.IsNullOrWhiteSpace(configuredUsername) ||
+                string.IsNullOrWhiteSpace(configuredPassword) ||
+                request.Username != configuredUsername ||
+                request.Password != configuredPassword)
             {
                 return Unauthorized(new { error = "Invalid username or password." });
             }

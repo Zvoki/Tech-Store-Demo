@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import "./SearchProduct.scss";
+import { API_URL } from "../../config";
 
 function SearchProduct() {
   const [mainProduct, setMainProduct] = useState(null);
@@ -28,7 +29,7 @@ function SearchProduct() {
         setError("");
 
         const res = await fetch(
-          `http://localhost:5239/api/product/search?q=${encodeURIComponent(query)}`
+          `${API_URL}/product/search?q=${encodeURIComponent(query)}`
         );
 
         if (!res.ok) throw new Error("Error fetching search results");
